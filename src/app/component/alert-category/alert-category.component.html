@@ -1,6 +1,6 @@
 <div class="app-alert-category card">
+	<h6 class="card-header bg-primary text-white">{{label}}</h6>
 	<div class="card-body">
-		<h6 class="card-title">{{label}}</h6>
 		<div class="list-group">
 				<button type="button" *ngFor="let group of groups" class="list-group-item list-group-item-action" (click)="addFilter(group.name)">
 					{{group.name}}&nbsp;<span class="badge badge-primary badge-pill">{{group.members.length}}</span>
