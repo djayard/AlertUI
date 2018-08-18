@@ -49,7 +49,7 @@ export class AlertCategoryComponent implements OnInit, OnChanges {
    * @param value The value that should be added to the filter corresponding to this component's key.
    */
   addFilter(value: string) {
-    this.filterRequest.emit(new Filter(this.key, this.label, [value], null));
+    this.filterRequest.emit(new Filter(this.key, this.label, [value]));
   }
 
   private groupAlerts() {

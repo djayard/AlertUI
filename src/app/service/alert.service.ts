@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
 })
 export class AlertService {
 
-  private static readonly FILTER_CATEGORIES: String[] = ['Severity', 'Client IP', 'Protocol', 'Client Country'];
+  private static readonly FILTER_CATEGORIES: string[] = ['Severity', 'Client IP', 'Protocol', 'Client Country'];
 
   constructor(private client: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class AlertService {
     return this.client.get<Alert[]>('assets/alerts.json');
   }
 
-  getCategories(): Observable<String[]> {
+  getCategories(): Observable<string[]> {
     return of(AlertService.FILTER_CATEGORIES);
   }
 }

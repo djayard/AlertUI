@@ -31,11 +31,11 @@ export class AlertSummaryComponent implements OnInit {
   /**
    * Creates trivial filters.
    */
-  private createFilters(labels: String[]) {
+  private createFilters(labels: string[]) {
     const filters = this.filters = [];
 
     for (const label of labels) {
-      filters.push(new Filter(label.replace(/\s/g, ''), label, [], null));
+      filters.push(new Filter(label.replace(/\s/g, ''), label, []));
     }
   }
 

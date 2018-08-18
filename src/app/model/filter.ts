@@ -26,10 +26,11 @@ export class Filter<T> {
    */
   condition: Predicate<T>;
 
-  constructor(key, label, values, condition) {
+  constructor(key: string, label: string, values: any[], condition?: Predicate<T>) {
     this.key = key;
     this.label = label;
     this.values = values || [];
     this.condition = condition || ( arg => this.values.length === 0 || this.values.some(value => value === arg[key] ) );
   }
+
 }
