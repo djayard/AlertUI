@@ -3,6 +3,9 @@ import { Filter } from '../../model/filter';
 import { AlertService } from '../../service/alert.service';
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Component that hosts a report on alert data.
+ */
 @Component({
   selector: 'app-alert-summary',
   templateUrl: './alert-summary.component.html',
@@ -17,7 +20,7 @@ export class AlertSummaryComponent implements OnInit {
 
   constructor(private alertService: AlertService) {
     this.alerts = this.filteredAlerts = [];
-    this.filters = [];
+    this.filters = this.nonEmptyFilters = [];
   }
 
   ngOnInit() {
@@ -25,14 +28,20 @@ export class AlertSummaryComponent implements OnInit {
      this.alertService.getCategories().subscribe(labels => this.createFilters(labels));
   }
 
+  /**
+   * Creates trivial filters.
+   */
   private createFilters(labels: String[]) {
-    const filters = this.filters;
+    const filters = this.filters = [];
 
     for (const label of labels) {
       filters.push(new Filter(label.replace(/\s/g, ''), label, [], null));
     }
   }
 
+  /**
+   * Event-handle for a child-component's filterRequest event.
+   */
   addFilter(request: Filter<Alert>) {
     const filters  = this.filters;
     const filter = filters.find(group => group.key === request.key);
@@ -43,6 +52,9 @@ export class AlertSummaryComponent implements OnInit {
 
   }
 
+  /**
+   * Processes that active filters and updates the list of filtered alerts.
+   */
   filter() {
     this.nonEmptyFilters = this.filters.filter(filter => filter.values.length > 0);
 
@@ -57,6 +69,9 @@ export class AlertSummaryComponent implements OnInit {
     });
   }
 
+  /**
+   * Removes the filter whose key matches the passed in argument.
+   */
   clearFilter(key: string) {
     const filter = this.filters.find(e => e.key === key);
     if (filter) {
@@ -65,6 +80,9 @@ export class AlertSummaryComponent implements OnInit {
     }
   }
 
+  /**
+   * Empties the values array of all filters.
+   */
   clearAll() {
     this.filters.forEach(filter => filter.values = []);
     this.filter();
