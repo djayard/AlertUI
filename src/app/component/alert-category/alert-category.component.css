@@ -1,0 +1,7 @@
+.list-group > button.list-group-item {
+	cursor: pointer
+}
+
+.card {
+	height: 100%
+}

@@ -1,0 +1,31 @@
+<div class="app-alert-summary card rounded">
+	<div class="card-header bg-primary text-white">
+		<h2 class="card-title">Alerts ({{ filteredAlerts.length }})</h2>
+	</div>
+	<div class="card-header">
+			<div class="btn-toolbar" role="toolbar" >
+				<div *ngFor="let filter of nonEmptyFilters" >
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-secondary" (click)="clearFilter(filter.key)">{{filter.label}}:&nbsp;
+							<span *ngFor="let value of filter.values">
+								{{value}},
+							</span>
+							&nbsp;X
+						</button>
+					</div>
+				</div>
+				<div class="btn-group clear-all" role="group">
+					<button type="button" class="btn btn-secondary" (click)="clearAll()">Clear All</button>
+				</div>
+			</div>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6" *ngFor="let filter of filters">
+				<app-alert-category  (filterRequest)="addFilter($event)" [key]="filter.key" [label]="filter.label" [alerts]="filteredAlerts">
+				</app-alert-category>
+			</div>
+		</div>
+	</div>
+	
+</div>

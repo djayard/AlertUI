@@ -1,0 +1,15 @@
+.btn-toolbar .btn-group {
+	margin: 0.25rem 0.75rem;
+}
+
+.btn-toolbar .btn-group.clear-all {
+	margin-left: auto;
+}
+
+.card-body > .row > * {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+
+
