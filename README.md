@@ -2,11 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 
-This is a quick implementation of having UI that supports filtering on some data.
+This is a quick implementation of an UI that supports filtering on some data.
 
 ## How to Quickly Experience This App
 
-If you have Node.js installed already, also make sure to have the Angular CLI installed.
+If you have [Node.js](https://nodejs.org/) installed already, also make sure to have the [Angular CLI](https://cli.angular.io/) installed.
 ```shell
 npm install -g @angular/cli
 ```
