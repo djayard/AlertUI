@@ -11,4 +11,4 @@ If you have [Node.js](https://nodejs.org/) installed already, also make sure to 
 npm install -g @angular/cli
 ```
 
-Once the CLI is installed, execute `ng serve --open` to have the app load in your default browser. The app will automatically reload if you change any of the source files.
+Once the CLI is installed, execute `npm install` and `ng serve --open` to have the app load in your default browser. The app will automatically reload if you change any of the source files.
